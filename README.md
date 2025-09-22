@@ -41,8 +41,3 @@ SETUP INSTRUCTIONS IF YOU WANT TO DO THIS:
    - Select 'bot' scope and 'Send Messages' permission
    - Use generated URL to invite bot to your server
 
- WHAT IS THE USAGE OF THIS BOT?:
-- Use your iOS shortcut to log food
-- Type !stats in Discord to see daily summary
-- Type !log pizza 300 calories to manually log food
-"""
