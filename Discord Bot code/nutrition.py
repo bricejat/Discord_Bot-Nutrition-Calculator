@@ -8,9 +8,9 @@ import json
 import sqlite3
 from datetime import datetime
 
-DISCORD_BOT_TOKEN = 
-NUTRITION_CHANNEL_ID = 
-YOUR_DISCORD_USER_ID = 
+DISCORD_BOT_TOKEN = YOUR BOT ID TOKEN
+NUTRITION_CHANNEL_ID = YOUR CHANNELID
+YOUR_DISCORD_USER_ID = YOUR PROFILE ID
 
 app = Flask(__name__)
 
@@ -79,10 +79,10 @@ async def send_to_discord(food_name, calories):
     try:
         await bot.wait_until_ready()
 
-        channel = bot.get_channel(1417743178420981812)
+        channel = bot.get_channel(INSERT CHANNEL ID)
 
         if not channel:
-            print(f"❌ Could not find channel with ID {1417743178420981812}")
+            print(f"❌ Could not find channel with ID {CHANNEL ID HERE}")
             return
         
         # Creating a embed message code
@@ -211,5 +211,6 @@ if __name__ == "__main__":
     print("🤖 Discord bot starting...")
 
     run_bot()
+
 
     
