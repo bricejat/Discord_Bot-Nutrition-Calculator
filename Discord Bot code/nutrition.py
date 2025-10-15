@@ -122,7 +122,7 @@ async def show_stats(ctx):
             result = cursor.fetchone()
 
             if not result or result[0] is None:
-                await ctx.send("📊 No food logged today yet!")
+                await ctx.send("No food logged today yet")
                 return
             
             total_calories, item_count = result
@@ -140,8 +140,8 @@ async def show_stats(ctx):
                 color=0x3498db,
                 timestamp=datetime.now()
             )
-            embed.add_field(name="🔥 Total Calories", value=f"{int(total_calories)}", inline=True)
-            embed.add_field(name="📝 Items Logged", value=f"{item_count}", inline=True)
+            embed.add_field(name=" Total Calories", value=f"{int(total_calories)}", inline=True)
+            embed.add_field(name=" Items Logged", value=f"{item_count}", inline=True)
 
             if recent_foods:
                  recent_text = "\n".join([f"• {food}: {cal} cal" for food, cal in recent_foods])
@@ -150,7 +150,7 @@ async def show_stats(ctx):
             await ctx.send(embed=embed)
 
     except Exception as e:
-        await ctx.send(f"❌ Error fetching stats: {e}")
+        await ctx.send(f"Error fetching stats: {e}")
 
 @bot.command(name='log')
 async def manual_log(ctx, *, food_info):
@@ -187,10 +187,10 @@ async def manual_log(ctx, *, food_info):
         conn.close()
 
         await send_to_discord(food_name,calories)
-        await ctx.send(f"✅ Logged {food_name} with {calories} calories")
+        await ctx.send(f"Logged {food_name} with {calories} calories")
 
     except Exception as e:
-        await ctx.send(f"❌ Error logging food: {e}")
+        await ctx.send(f" Error logging food: {e}")
         await ctx.send("Usage: `!log pizza 300 calories`")
 
 def run_flask():
@@ -214,3 +214,4 @@ if __name__ == "__main__":
 
 
     
+
