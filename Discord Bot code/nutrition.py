@@ -71,7 +71,7 @@ def receieve__nutrition():
         }), 200
     
     except Exception as e:
-        print(f"❌ Error processing webhook: {e}")
+        print(f"Error processing webhook: {e}")
         return jsonify({"status": "error", "message": str(e)}), 400
     
 async def send_to_discord(food_name, calories):
@@ -82,7 +82,7 @@ async def send_to_discord(food_name, calories):
         channel = bot.get_channel(INSERT CHANNEL ID)
 
         if not channel:
-            print(f"❌ Could not find channel with ID {CHANNEL ID HERE}")
+            print(f" Could not find channel with ID {CHANNEL ID HERE}")
             return
         
         # Creating a embed message code
@@ -92,17 +92,17 @@ async def send_to_discord(food_name, calories):
             timestamp=datetime.now()
         )
 
-        embed.add_field(name="📝 Food", value=food_name, inline=False)
-        embed.add_field(name="🔥 Calories", value=f"{calories}", inline=True)
+        embed.add_field(name="Food", value=food_name, inline=False)
+        embed.add_field(name="Calories", value=f"{calories}", inline=True)
 
         embed.set_footer(text="Logged via iOS Shortcut")
 
     #Sends a message
         await channel.send(embed=embed)
-        print(f"❌ Error sending to Discord: {e}")
+        print(f"Error sending to Discord: {e}")
 
     except Exception as e:
-         print(f"❌ Error sending to Discord: {e}")
+         print(f"Error sending to Discord: {e}")
 
 # Commands to show theres been no data and total data added
 @bot.command(name='stats')
@@ -136,7 +136,7 @@ async def show_stats(ctx):
             conn.close()
 
             embed = discord.Embed(
-                 title="📊 Today's Nutrition Stats",
+                 title="Today's Nutrition Stats",
                 color=0x3498db,
                 timestamp=datetime.now()
             )
@@ -191,7 +191,7 @@ async def manual_log(ctx, *, food_info):
 
     except Exception as e:
         await ctx.send(f" Error logging food: {e}")
-        await ctx.send("Usage: `!log pizza 300 calories`")
+        await ctx.send("Usage:`!log pizza 300 calories`")
 
 def run_flask():
     """Run the Flask webhook server"""
@@ -214,4 +214,5 @@ if __name__ == "__main__":
 
 
     
+
 
