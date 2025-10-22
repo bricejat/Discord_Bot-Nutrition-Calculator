@@ -35,8 +35,8 @@ def init_database():
 
 @bot.event
 async def on_ready():
-    print(f'✅ {bot.user} is connected and ready!')
-    print(f'📱 Webhook server running on port 5000')
+    print(f'{bot.user} is connected and ready!')
+    print(f'Webhook server running on port 5000')
     init_database()
 
     ## WEBHOOKS endpoint for IOS
@@ -202,17 +202,18 @@ def run_bot():
     bot.run(DISCORD_BOT_TOKEN)
 
 if __name__ == "__main__":
-    print("🚀 Starting Nutrition Bot...")
+    print("Starting Nutrition Bot...")
 
     flask_thread = threading.Thread(target=run_flask, daemon=True)
     flask_thread.start()
 
-    print("📱 Webhook server starting on port 5000...")
-    print("🤖 Discord bot starting...")
+    print("Webhook server starting on port 5000...")
+    print("Discord bot starting...")
 
     run_bot()
 
 
     
+
 
 
